@@ -74,6 +74,12 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: artemis
 theme_config:
+  favicon: favicon.ico
+  logo: notes-logo.png
+  copyright:
+    since: 2017
+    name: Yusuke Ohashi
+    url: https://yuchan.github.io/notes
   menu:
     GitHub: https://github.com/yuchan
 

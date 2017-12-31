@@ -3,7 +3,7 @@ title: 年の瀬にBlogをHexoに変えた。 - Part 2
 date: 2017/12/31 15:00:00
 ---
 
-[Part1](/mnotes/2017/12/31/development-in-2017/)に引き続き、生活面の振り返りです。
+[Part1](/notes/2017/12/31/development-in-2017/)に引き続き、生活面の振り返りです。
 
 <!-- more -->
 
@@ -43,7 +43,8 @@ Apple Musicはちょっと日本の曲を聴きたいと思った時に充実し
 
 {% youtube rahRaVtEQaM %}
 
-## Mobile環境
+Mobile
+================
 
 ### iPhone X, Macbook Pro Retina 2013
 
