@@ -1,3 +1,12 @@
 [submodule "themes/artemis"]
 	path = themes/artemis
 	url = https://github.com/Dreyer/hexo-theme-artemis.git
+[submodule "themes/anatole"]
+	path = themes/anatole
+	url = https://github.com/Ben02/hexo-theme-Anatole.git
+[submodule "themes/meilidu"]
+	path = themes/meilidu
+	url = https://github.com/HoverBaum/meilidu-hexo.git
+[submodule "themes/cactus-light"]
+	path = themes/cactus-light
+	url = https://github.com/gabithume/cactus-light.git

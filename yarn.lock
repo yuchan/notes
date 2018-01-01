@@ -1061,6 +1061,12 @@ hexo-pagination@0.0.2:
   dependencies:
     utils-merge "^1.0.0"
 
+hexo-pagination@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/hexo-pagination/-/hexo-pagination-0.1.0.tgz#54f0be12e6ae51d1c0a6f0023674ba77ac514ce3"
+  dependencies:
+    object-assign "^4.1.0"
+
 hexo-renderer-ejs@^0.3.0:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/hexo-renderer-ejs/-/hexo-renderer-ejs-0.3.1.tgz#c0c1a3757532d47e5b7d9dc908b5dfd98c94be2c"

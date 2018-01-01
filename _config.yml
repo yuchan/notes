@@ -72,16 +72,32 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: artemis
+theme: cactus-light
 theme_config:
-  favicon: favicon.ico
-  logo: notes-logo.png
   copyright:
     since: 2017
     name: Yusuke Ohashi
     url: https://yuchan.github.io/notes
-  menu:
-    GitHub: https://github.com/yuchan
+  nav:
+    Home: /
+    Writing: /archives/
+    Projects: http://github.com/yuchan
+  customize:
+    gravatar:
+      email: github@junkpiano.me
+    logo:
+      enabled: true
+      gravatar: false
+      url: /images/notes-logo.png
+    social_links:
+      github: https://github.com/yuchan
+      twitter: https://twitter.com/junkpiano
+    favicon:
+      # eg. generate with http://realfavicongenerator.net/
+      desktop:
+        gravatar: false
+        url: /images/favicon.ico
+
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
