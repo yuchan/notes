@@ -36,7 +36,7 @@ Run this command, and it will install `rvm` under your `$HOME`. When it's done, 
     rvm install 2.4
 
 You can choose whatever version you like, now I selected ruby 2.4. Currently, 2.4 is the most stable latest version.
-`rvm install` doesn't pollute your root environment. This is kind of "sandbox" environment. It just puts the ruby in your $HOME and you can uninstall anytime.
+`rvm install` doesn't pollute your root environment. This is kind of "sandbox" environment. It just installs the ruby in your $HOME/.rvm and you can uninstall it anytime.
 That's not the point now. Thing is that when you install ruby, it also install the latest OpenSSL at the same time. That's the point.
 Then, you can use ruby 2.4 with new OpenSSL. Your ruby environment is totally clean and has no modules. So you have to install cocoapods again.
 
