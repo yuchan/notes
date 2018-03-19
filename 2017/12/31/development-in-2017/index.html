@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang=Ja>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Hexoはこれです。結構、綺麗なthemeがあるのと、NodeJS製だからです。 また、メインコンテンツは2017の開発環境の振り返りです。続きをどうぞ〜。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="年の瀬にBlogをHexoに変えた。 - Part 1">
+<meta property="og:url" content="https://yuchan.github.io/2017/12/31/development-in-2017/index.html">
+<meta property="og:site_name" content="Notes">
+<meta property="og:description" content="Hexoはこれです。結構、綺麗なthemeがあるのと、NodeJS製だからです。 また、メインコンテンツは2017の開発環境の振り返りです。続きをどうぞ〜。">
+<meta property="og:locale" content="Japanese">
+<meta property="og:updated_time" content="2018-01-24T06:31:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="年の瀬にBlogをHexoに変えた。 - Part 1">
+<meta name="twitter:description" content="Hexoはこれです。結構、綺麗なthemeがあるのと、NodeJS製だからです。 また、メインコンテンツは2017の開発環境の振り返りです。続きをどうぞ〜。">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/notes/images/favicon.ico">
+          
+        
+        
+        
+    
+    <!-- title -->
+    <title>年の瀬にBlogをHexoに変えた。 - Part 1</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/notes/css/style.css">
+    <!-- rss -->
+    
+    
+</head>
+
+<body>
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/notes/">Home</a></li>
+         
+          <li><a href="/notes/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/yuchan">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/notes/2017/12/31/life-in-2017/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+        
+        
+        <li><a class="icon" href="/notes/2017/12/15/pipenv/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://yuchan.github.io/2017/12/31/development-in-2017/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://yuchan.github.io/2017/12/31/development-in-2017/&text=年の瀬にBlogをHexoに変えた。 - Part 1"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://yuchan.github.io/2017/12/31/development-in-2017/&title=年の瀬にBlogをHexoに変えた。 - Part 1"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://yuchan.github.io/2017/12/31/development-in-2017/&is_video=false&description=年の瀬にBlogをHexoに変えた。 - Part 1"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=年の瀬にBlogをHexoに変えた。 - Part 1&body=Check out this article: https://yuchan.github.io/2017/12/31/development-in-2017/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://yuchan.github.io/2017/12/31/development-in-2017/&title=年の瀬にBlogをHexoに変えた。 - Part 1"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://yuchan.github.io/2017/12/31/development-in-2017/&title=年の瀬にBlogをHexoに変えた。 - Part 1"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://yuchan.github.io/2017/12/31/development-in-2017/&title=年の瀬にBlogをHexoに変えた。 - Part 1"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://yuchan.github.io/2017/12/31/development-in-2017/&title=年の瀬にBlogをHexoに変えた。 - Part 1"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://yuchan.github.io/2017/12/31/development-in-2017/&name=年の瀬にBlogをHexoに変えた。 - Part 1&description=&lt;p&gt;&lt;a href=&#34;https://hexo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hexo&lt;/a&gt;は&lt;a href=&#34;https://hexo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;これ&lt;/a&gt;です。&lt;br&gt;結構、綺麗なthemeがあるのと、NodeJS製だからです。&lt;/p&gt;
+&lt;p&gt;また、メインコンテンツは2017の開発環境の振り返りです。続きをどうぞ〜。&lt;/p&gt;"><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Text-Editor"><span class="toc-number">1.</span> <span class="toc-text">Text Editor</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Xcode-VSC-and-Sublime-Text"><span class="toc-number">1.1.</span> <span class="toc-text">Xcode, VSC, and Sublime Text</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Terminal"><span class="toc-number">2.</span> <span class="toc-text">Terminal</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#iTerm"><span class="toc-number">2.0.1.</span> <span class="toc-text">iTerm</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Programming-Language"><span class="toc-number">3.</span> <span class="toc-text">Programming Language</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Swift-Ruby"><span class="toc-number">3.0.1.</span> <span class="toc-text">Swift, Ruby</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Conference"><span class="toc-number">4.</span> <span class="toc-text">Conference</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Try-Swift-Tokyo-WWDC-2017"><span class="toc-number">4.0.1.</span> <span class="toc-text">Try Swift Tokyo, WWDC 2017</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index width mx-auto px2 my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        年の瀬にBlogをHexoに変えた。 - Part 1
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Notes</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2017-12-31T05:00:00.000Z" itemprop="datePublished">2017-12-31</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>は<a href="https://hexo.io/" target="_blank" rel="noopener">これ</a>です。<br>結構、綺麗なthemeがあるのと、NodeJS製だからです。</p>
+<p>また、メインコンテンツは2017の開発環境の振り返りです。続きをどうぞ〜。</p>
+<a id="more"></a>
+<h1 id="Text-Editor"><a href="#Text-Editor" class="headerlink" title="Text Editor"></a>Text Editor</h1><h2 id="Xcode-VSC-and-Sublime-Text"><a href="#Xcode-VSC-and-Sublime-Text" class="headerlink" title="Xcode, VSC, and Sublime Text"></a>Xcode, VSC, and Sublime Text</h2><p>今年の初めころは悶々としていたと思う。とりあえず、XcodeでひたすらSwiftを書いていた。<br>合わせて、Objective-Cのコードをちょくちょく触ってメンテしていた気がする。</p>
+<p>その後、機会があって、VueJSを初めて書いた時に、Visual Studio Codeの強力さに非常に感動してずっと使い続けていた。Xcode以外に、ほとんどのテキストはVSCで書いたと思う。</p>
+<p>VSCの良さは、良質なプラグインがたくさんあることである。<br>ポピュラーな言語のプラグインはほとんどハズレがないと思う。</p>
+<p>自分は大体、pluginを入れたら即反映されてほしく、ロードもできるだけ早くやってほしい。というのはVSCに常駐することはほとんどなく、Xcodeがメインなので、いちいちエディタの設定に時間を取られるのは避けたい。その点、VSCの拡張機能の管理は素晴らしく即座に反映するので、待つ必要があまりない。そこも良いポイントである。</p>
+<p>初心者の人で、まず何のエディターを使えば良いか迷っていれば、まずVSCを試して見てほしい。</p>
+<p>若干、不満があるとすれば、パフォーマンスである。起動があまり早くない。あと開発元の影響力が無視できず、自分がそのステークホルダーでもないので、あまり左右されたくないという点がある。</p>
+<p>とまぁそこで、代替も探しており、候補としては、C系で書かれているTextMateとか、Sublime Textになるわけだが、TextMateのプラグインがあまりメンテされておらず、Sublime Textのほぼ一択になってしまう。</p>
+<p>BBEdit、Chocolatなども検討したが、前者は費用面、後者はメンテが続くか不安ということで却下となった。Vimはあまり見ていない。</p>
+<p>一瞬、Emacsに戻ろうかと考えて、Spacemacs, Preludeなどを試したがしっくりこず。</p>
+<p>ということで、来年、テキストエディタはSublime Textを使っていこうと思っている。<br>ただSublime TextはあんまりUIが綺麗じゃないのでそこが気に入らないところだけど、他のElectron系のアプリに比べたらパフォーマンスがマシだ。起動が早い。</p>
+<p>せっかちな人間には、起動の速さは大事だ。<br>プラグインももちろん、豊富に揃っていてほとんど困ることはない。</p>
+<p>ちなみに、これはDestruction Freeモードで書いている。</p>
+<h1 id="Terminal"><a href="#Terminal" class="headerlink" title="Terminal"></a>Terminal</h1><h3 id="iTerm"><a href="#iTerm" class="headerlink" title="iTerm"></a>iTerm</h3><p>iTermを使い続けている。Hyper.jsはまだ人類には早いと思う。<br>iTermはObjective-Cで書かれているので、よく知っているので信頼が置ける。</p>
+<p>また、tmuxをタブの代わりに使っている。画面分割もできて便利だ。</p>
+<h1 id="Programming-Language"><a href="#Programming-Language" class="headerlink" title="Programming Language"></a>Programming Language</h1><h3 id="Swift-Ruby"><a href="#Swift-Ruby" class="headerlink" title="Swift, Ruby"></a>Swift, Ruby</h3><p>今年は、SwiftとRubyをよく書いた。Rubyはほとんど小規模のsinatraやautomation用のスクリプトであったが、一部Railsで本格的に開発したところもあった。</p>
+<p>Objective-Cはほとんど書いていない。時代だな。<br>Swiftに関しては、もっとdocumentを読んでinspireされたいと思います。多分まだ知らないところがある気がしている。</p>
+<p>これから、もしかすると、Pythonや、C++を使う機会が増えるかもしれない。<br>Rubyは自分のメイン言語の一つだから便利ツールとして、これからも活用していくと思います。</p>
+<h1 id="Conference"><a href="#Conference" class="headerlink" title="Conference"></a>Conference</h1><h3 id="Try-Swift-Tokyo-WWDC-2017"><a href="#Try-Swift-Tokyo-WWDC-2017" class="headerlink" title="Try Swift Tokyo, WWDC 2017"></a>Try Swift Tokyo, WWDC 2017</h3><p>Try Swift TokyoとWWDC2017に参加することができた。<br>特に、WWDCの参加は今年が初めてだったので、とてもドキドキした。そして楽しめることができた。</p>
+<p>ビアバッシュだけでなく、San Joseで開かれていたローカルのイベントにも参加した。元アップルの社員や、カンファレンスの登壇でしか知らなかった人にとりあえず、挨拶だけでもすることができた。</p>
+<p>ただ、あまり勉強会的なものに、興味がなくなってきているので、ちょっとまずいかもしれない。</p>
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/notes/">Home</a></li>
+         
+          <li><a href="/notes/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/yuchan">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Text-Editor"><span class="toc-number">1.</span> <span class="toc-text">Text Editor</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Xcode-VSC-and-Sublime-Text"><span class="toc-number">1.1.</span> <span class="toc-text">Xcode, VSC, and Sublime Text</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Terminal"><span class="toc-number">2.</span> <span class="toc-text">Terminal</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#iTerm"><span class="toc-number">2.0.1.</span> <span class="toc-text">iTerm</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Programming-Language"><span class="toc-number">3.</span> <span class="toc-text">Programming Language</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Swift-Ruby"><span class="toc-number">3.0.1.</span> <span class="toc-text">Swift, Ruby</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Conference"><span class="toc-number">4.</span> <span class="toc-text">Conference</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Try-Swift-Tokyo-WWDC-2017"><span class="toc-number">4.0.1.</span> <span class="toc-text">Try Swift Tokyo, WWDC 2017</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://yuchan.github.io/2017/12/31/development-in-2017/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://yuchan.github.io/2017/12/31/development-in-2017/&text=年の瀬にBlogをHexoに変えた。 - Part 1"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://yuchan.github.io/2017/12/31/development-in-2017/&title=年の瀬にBlogをHexoに変えた。 - Part 1"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://yuchan.github.io/2017/12/31/development-in-2017/&is_video=false&description=年の瀬にBlogをHexoに変えた。 - Part 1"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=年の瀬にBlogをHexoに変えた。 - Part 1&body=Check out this article: https://yuchan.github.io/2017/12/31/development-in-2017/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://yuchan.github.io/2017/12/31/development-in-2017/&title=年の瀬にBlogをHexoに変えた。 - Part 1"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://yuchan.github.io/2017/12/31/development-in-2017/&title=年の瀬にBlogをHexoに変えた。 - Part 1"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://yuchan.github.io/2017/12/31/development-in-2017/&title=年の瀬にBlogをHexoに変えた。 - Part 1"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://yuchan.github.io/2017/12/31/development-in-2017/&title=年の瀬にBlogをHexoに変えた。 - Part 1"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://yuchan.github.io/2017/12/31/development-in-2017/&name=年の瀬にBlogをHexoに変えた。 - Part 1&description=&lt;p&gt;&lt;a href=&#34;https://hexo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hexo&lt;/a&gt;は&lt;a href=&#34;https://hexo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;これ&lt;/a&gt;です。&lt;br&gt;結構、綺麗なthemeがあるのと、NodeJS製だからです。&lt;/p&gt;
+&lt;p&gt;また、メインコンテンツは2017の開発環境の振り返りです。続きをどうぞ〜。&lt;/p&gt;"><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 Yusuke Ohashi
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/notes/">Home</a></li>
+         
+          <li><a href="/notes/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/yuchan">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/notes/lib/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/notes/lib/meslo-LG/styles.css">
+<link rel="stylesheet" href="/notes/lib/justified-gallery/justifiedGallery.min.css">
+
+
+<!-- jquery -->
+<script src="/notes/lib/jquery/jquery.min.js"></script>
+<script src="/notes/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/notes/js/main.js"></script>
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-86660611-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Disqus Comments -->
+
+

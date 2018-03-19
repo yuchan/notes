@@ -6,7 +6,7 @@
   <link href="/notes/atom.xml" rel="self"/>
   
   <link href="https://yuchan.github.io/"/>
-  <updated>2018-01-24T06:31:18.000Z</updated>
+  <updated>2018-03-19T03:11:25.000Z</updated>
   <id>https://yuchan.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Fix github is offline when running cocoapods</title>
+    <link href="https://yuchan.github.io/2018/03/19/cocoapods-github-offline/"/>
+    <id>https://yuchan.github.io/2018/03/19/cocoapods-github-offline/</id>
+    <published>2018-03-19T02:29:21.000Z</published>
+    <updated>2018-03-19T03:11:25.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>I will write how to fix the error you meet when you are running cocoapods.<br>Cocoapods sometimes says that GitHub is offline even if you are connected to the internet.<br>The reason is why Github <a href="https://blog.github.com/2018-02-23-weak-cryptographic-standards-removed/" target="_blank" rel="noopener">removed support for weak cryptographic standards</a>. That’s why your connection is refused by Github.</p><p>I will show you how to fix this issue step by step.</p><h2 id="Homebrew-and-Commandline-Tool"><a href="#Homebrew-and-Commandline-Tool" class="headerlink" title="Homebrew and Commandline Tool"></a>Homebrew and Commandline Tool</h2><p>First, please make sure that you already installed <code>homebrew</code> and Xcode command line tools.</p><p>install homebrew</p><pre><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></pre><p>install Xcode command line tool</p><pre><code>xcode-select -install</code></pre><h2 id="install-RVM"><a href="#install-RVM" class="headerlink" title="install RVM"></a>install RVM</h2><p>and next upgrade ruby version, since default ruby version is ancient in Sierra, probably even in High Sierra.<br>Now we are going to use <a href="https://rvm.io" target="_blank" rel="noopener">RVM</a>, which is ruby version management tool.</p><pre><code>\curl -sSL https://get.rvm.io | bash -s stable</code></pre><h2 id="install-ruby-and-cocoapods-again"><a href="#install-ruby-and-cocoapods-again" class="headerlink" title="install ruby and cocoapods again"></a>install ruby and cocoapods again</h2><p>Run this command, and it will install <code>rvm</code> under your <code>$HOME</code>. When it’s done, now it’s time to upgrade your ruby.</p><pre><code>rvm install 2.4</code></pre><p>You can choose whatever version you like, now I selected ruby 2.4. Currently, 2.4 is the most stable latest version.<br><code>rvm install</code> doesn’t pollute your root environment. This is kind of “sandbox” environment. It just puts the ruby in your $HOME and you can uninstall anytime.<br>That’s not the point now. Thing is that when you install ruby, it also install the latest OpenSSL at the same time. That’s the point.<br>Then, you can use ruby 2.4 with new OpenSSL. Your ruby environment is totally clean and has no modules. So you have to install cocoapods again.</p><pre><code>gem install cocoapods</code></pre><p>Great! We are all set!<br>Now problem is fixed, I am sure.</p><h2 id="update-pod"><a href="#update-pod" class="headerlink" title="update pod"></a>update pod</h2><pre><code>pod repo update # if it fails, try again. It seems if fails several times.pod install</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;I will write how to fix the error you meet when you are running cocoapods.&lt;br&gt;Cocoapods sometimes says that GitHub is offline even if you
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>年の瀬にBlogをHexoに変えた。 - Part 2</title>
