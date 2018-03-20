@@ -106,3 +106,12 @@ deploy:
   repo: https://github.com/yuchan/notes.git
   branch: gh-pages
   # message: "hello"
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 0
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '

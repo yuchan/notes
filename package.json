@@ -24,6 +24,6 @@
   },
   "scripts": {
     "dev": "hexo serve",
-    "new-post": "hexo new post" 
+    "new-post": "hexo new post"
   }
 }

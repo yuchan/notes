@@ -10,6 +10,8 @@ The reason why it happens is that Github [removed support for weak cryptographic
 
 In this post, I will show you how to fix this issue step by step.
 
+<!-- more -->
+
 ## Homebrew and Commandline Tool
 
 First, please make sure that you already installed `homebrew` and Xcode command line tools.
