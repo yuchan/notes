@@ -6,7 +6,7 @@
   <link href="/notes/atom.xml" rel="self"/>
   
   <link href="https://yuchan.github.io/"/>
-  <updated>2018-03-19T08:01:11.000Z</updated>
+  <updated>2018-03-19T12:31:13.000Z</updated>
   <id>https://yuchan.github.io/</id>
   
   <author>
@@ -21,16 +21,12 @@
     <link href="https://yuchan.github.io/2018/03/19/cocoapods-github-offline/"/>
     <id>https://yuchan.github.io/2018/03/19/cocoapods-github-offline/</id>
     <published>2018-03-19T02:29:21.000Z</published>
-    <updated>2018-03-19T08:01:11.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>I will write how to fix the error you meet when you are running cocoapods.<br>Cocoapods sometimes says that GitHub is offline even if you are connected to the internet.<br>The reason why it happens is that Github <a href="https://blog.github.com/2018-02-23-weak-cryptographic-standards-removed/" target="_blank" rel="noopener">removed support for weak cryptographic standards</a>. That’s why your connection is refused by Github.</p><p>In this post, I will show you how to fix this issue step by step.</p><h2 id="Homebrew-and-Commandline-Tool"><a href="#Homebrew-and-Commandline-Tool" class="headerlink" title="Homebrew and Commandline Tool"></a>Homebrew and Commandline Tool</h2><p>First, please make sure that you already installed <code>homebrew</code> and Xcode command line tools.</p><p>install homebrew</p><pre><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></pre><p>install Xcode command line tool</p><pre><code>xcode-select -install</code></pre><h2 id="install-RVM-and-Ruby-again"><a href="#install-RVM-and-Ruby-again" class="headerlink" title="install RVM and Ruby (again)"></a>install RVM and Ruby (again)</h2><p>Next upgrade ruby version, since default ruby version and default ssl version are ancient ones in Sierra, probably even in High Sierra.<br>Now we are going to use <a href="https://rvm.io" target="_blank" rel="noopener">RVM</a>, which is ruby version management tool.</p><pre><code>\curl -sSL https://get.rvm.io | bash -s stable</code></pre><p>Run this command, and it will install <code>rvm</code> under your <code>$HOME</code>. When it’s done, now it’s time to upgrade your ruby.</p><pre><code>rvm install 2.4</code></pre><p>You can choose whatever version you like, now I selected ruby 2.4. Currently, 2.4 is the most stable latest version.<br>Let me explain a bit how it works. <code>rvm install</code> doesn’t pollute your root environment. Instead, it creates kind of “sandbox” environment. It just installs the ruby in your $HOME/.rvm and you can uninstall it anytime without any side effects.</p><p>And in this step, thing is that when you install ruby, it also install the latest OpenSSL at the same time. That’s the point.<br>The new openssl library will solve github ssl issue.</p><h2 id="install-cocoapods-again"><a href="#install-cocoapods-again" class="headerlink" title="install cocoapods again"></a>install cocoapods again</h2><p>Then, you have ruby 2.4 with new OpenSSL. Your ruby environment is totally clean and has no modules. So you have to install cocoapods again.</p><pre><code>gem install cocoapods</code></pre><p>Great! We are all set!</p><p>You may want to install other modules, like fastlane. please do it. There are no worries.</p><pre><code>gem install fastlane</code></pre><h2 id="update-pod"><a href="#update-pod" class="headerlink" title="update pod"></a>update pod</h2><p>You can upgrade your dependencies.</p><pre><code>pod repo update # if it fails, try again. It seems if fails several times.pod install</code></pre>]]></content>
+    <updated>2018-03-19T12:31:13.000Z</updated>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;I will write how to fix the error you meet when you are running cocoapods.&lt;br&gt;Cocoapods sometimes says that GitHub is offline even if you
-      
+      &lt;p&gt;I will write how to fix the error you meet when you are running cocoapods.&lt;br&gt;Cocoapods sometimes says that GitHub is offline even if you are connected to the internet.&lt;br&gt;The reason why it happens is that Github &lt;a href=&quot;https://blog.github.com/2018-02-23-weak-cryptographic-standards-removed/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;removed support for weak cryptographic standards&lt;/a&gt;. That’s why your connection is refused by Github.&lt;/p&gt;
+&lt;p&gt;In this post, I will show you how to fix this issue step by step.&lt;/p&gt;
     
     </summary>
     
@@ -42,9 +38,7 @@
     <link href="https://yuchan.github.io/2017/12/31/life-in-2017/"/>
     <id>https://yuchan.github.io/2017/12/31/life-in-2017/</id>
     <published>2017-12-31T06:00:00.000Z</published>
-    <updated>2018-03-19T04:57:36.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="/notes/2017/12/31/development-in-2017/">Part1</a>に引き続き、生活面の振り返りです。</p><a id="more"></a><h1 id="Money"><a href="#Money" class="headerlink" title="Money"></a>Money</h1><p>去年の終わりくらいに一気にいらなかった本を処分したりした。今年初めくらいは、ミニマリストに関する書籍やブログを読みあさっていた。<br>今年はそのおかげか全体的に出費が減った。その減った分の幾分かを年末に少し好きなものを買ったり、モノのアップデートをした。</p><p>今年はまだまだ、減らせる余裕があると思うので、引き続きその分を他の自己投資なりに当てて行きたいと思う。</p><h1 id="Travel"><a href="#Travel" class="headerlink" title="Travel"></a>Travel</h1><h3 id="San-Jose-大阪、福岡、長崎"><a href="#San-Jose-大阪、福岡、長崎" class="headerlink" title="San Jose, 大阪、福岡、長崎"></a>San Jose, 大阪、福岡、長崎</h3><p>海外としては、WWDCでSan Joseに行った。そのほかは、クライマックス、日本シリーズの野球観戦で、大阪、福岡、そのほか、長崎にちょこっと行った。</p><p>一番良かったのは意外にも、長崎だった。初めての長崎だったんだけど、路面電車が非常に便利で住むのには困らなそうだなと感じた。長崎市内なら、一日券500円くらいでまわれるのも良い。意外と元を取るのが難しかったりする。時間に余裕があれば、佐世保に行ったり、ハウステンボスも行きたかった。また、次回行きたいと思う。</p><p>とはいえ、San Joseはやっぱりいい街だな、と思った。いつか住みたい。そのための準備はいつもしている。</p><h1 id="Music"><a href="#Music" class="headerlink" title="Music"></a>Music</h1><h3 id="SoundCloud-Spotify-Youtube"><a href="#SoundCloud-Spotify-Youtube" class="headerlink" title="SoundCloud, Spotify, Youtube"></a>SoundCloud, Spotify, Youtube</h3><p>今年の初めはSoundcloudをひたすら聞いていた気がする。</p><p>後半は、Chillをひたすら聞いていた。今も聞いている。<br>SpotifyのChill Tracksはお気に入りのplaylistだった。<br>ただ、毎日聞いていて若干飽きてきたので、Apple MusicのChillカテゴリに挑戦してみようと思う。</p><p>Apple Musicはちょっと日本の曲を聴きたいと思った時に充実しているのでそこが便利。Spotifyは、（多分権利関係で）配信されていない曲があったりするのでそこがまだ不便。</p><p>また、Youtubeは相変わらず、良いmixを見つけるには最適だ。<a href="https://www.youtube.com/red" target="_blank" rel="noopener">Youtube Red</a>が来たら、アプリがbackground再生に対応するので、早く日本でもサービスを開始してほしい。真っ先に課金すると思う。</p><div class="video-container"><iframe src="//www.youtube.com/embed/rahRaVtEQaM" frameborder="0" allowfullscreen></iframe></div><h1 id="Mobile"><a href="#Mobile" class="headerlink" title="Mobile"></a>Mobile</h1><h3 id="iPhone-X-Macbook-Pro-Retina-2013"><a href="#iPhone-X-Macbook-Pro-Retina-2013" class="headerlink" title="iPhone X, Macbook Pro Retina 2013"></a>iPhone X, Macbook Pro Retina 2013</h3><p>メインはiPhone Xになった。<br>楽天モバイルからBiglobe Simに切り替えた。高速通信は3GBから6GBまで増やした。<br>laptopはmacbook pro retina 2013を引き続き使い続けている。ディスプレイが一部壊れ気味なので、買い換えたいが、これは持ち越し。</p>]]></content>
+    <updated>2018-03-19T12:28:06.000Z</updated>
     
     <summary type="html">
     
@@ -60,9 +54,7 @@
     <link href="https://yuchan.github.io/2017/12/31/development-in-2017/"/>
     <id>https://yuchan.github.io/2017/12/31/development-in-2017/</id>
     <published>2017-12-31T05:00:00.000Z</published>
-    <updated>2018-03-19T04:57:36.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>は<a href="https://hexo.io/" target="_blank" rel="noopener">これ</a>です。<br>結構、綺麗なthemeがあるのと、NodeJS製だからです。</p><p>また、メインコンテンツは2017の開発環境の振り返りです。続きをどうぞ〜。</p><a id="more"></a><h1 id="Text-Editor"><a href="#Text-Editor" class="headerlink" title="Text Editor"></a>Text Editor</h1><h2 id="Xcode-VSC-and-Sublime-Text"><a href="#Xcode-VSC-and-Sublime-Text" class="headerlink" title="Xcode, VSC, and Sublime Text"></a>Xcode, VSC, and Sublime Text</h2><p>今年の初めころは悶々としていたと思う。とりあえず、XcodeでひたすらSwiftを書いていた。<br>合わせて、Objective-Cのコードをちょくちょく触ってメンテしていた気がする。</p><p>その後、機会があって、VueJSを初めて書いた時に、Visual Studio Codeの強力さに非常に感動してずっと使い続けていた。Xcode以外に、ほとんどのテキストはVSCで書いたと思う。</p><p>VSCの良さは、良質なプラグインがたくさんあることである。<br>ポピュラーな言語のプラグインはほとんどハズレがないと思う。</p><p>自分は大体、pluginを入れたら即反映されてほしく、ロードもできるだけ早くやってほしい。というのはVSCに常駐することはほとんどなく、Xcodeがメインなので、いちいちエディタの設定に時間を取られるのは避けたい。その点、VSCの拡張機能の管理は素晴らしく即座に反映するので、待つ必要があまりない。そこも良いポイントである。</p><p>初心者の人で、まず何のエディターを使えば良いか迷っていれば、まずVSCを試して見てほしい。</p><p>若干、不満があるとすれば、パフォーマンスである。起動があまり早くない。あと開発元の影響力が無視できず、自分がそのステークホルダーでもないので、あまり左右されたくないという点がある。</p><p>とまぁそこで、代替も探しており、候補としては、C系で書かれているTextMateとか、Sublime Textになるわけだが、TextMateのプラグインがあまりメンテされておらず、Sublime Textのほぼ一択になってしまう。</p><p>BBEdit、Chocolatなども検討したが、前者は費用面、後者はメンテが続くか不安ということで却下となった。Vimはあまり見ていない。</p><p>一瞬、Emacsに戻ろうかと考えて、Spacemacs, Preludeなどを試したがしっくりこず。</p><p>ということで、来年、テキストエディタはSublime Textを使っていこうと思っている。<br>ただSublime TextはあんまりUIが綺麗じゃないのでそこが気に入らないところだけど、他のElectron系のアプリに比べたらパフォーマンスがマシだ。起動が早い。</p><p>せっかちな人間には、起動の速さは大事だ。<br>プラグインももちろん、豊富に揃っていてほとんど困ることはない。</p><p>ちなみに、これはDestruction Freeモードで書いている。</p><h1 id="Terminal"><a href="#Terminal" class="headerlink" title="Terminal"></a>Terminal</h1><h3 id="iTerm"><a href="#iTerm" class="headerlink" title="iTerm"></a>iTerm</h3><p>iTermを使い続けている。Hyper.jsはまだ人類には早いと思う。<br>iTermはObjective-Cで書かれているので、よく知っているので信頼が置ける。</p><p>また、tmuxをタブの代わりに使っている。画面分割もできて便利だ。</p><h1 id="Programming-Language"><a href="#Programming-Language" class="headerlink" title="Programming Language"></a>Programming Language</h1><h3 id="Swift-Ruby"><a href="#Swift-Ruby" class="headerlink" title="Swift, Ruby"></a>Swift, Ruby</h3><p>今年は、SwiftとRubyをよく書いた。Rubyはほとんど小規模のsinatraやautomation用のスクリプトであったが、一部Railsで本格的に開発したところもあった。</p><p>Objective-Cはほとんど書いていない。時代だな。<br>Swiftに関しては、もっとdocumentを読んでinspireされたいと思います。多分まだ知らないところがある気がしている。</p><p>これから、もしかすると、Pythonや、C++を使う機会が増えるかもしれない。<br>Rubyは自分のメイン言語の一つだから便利ツールとして、これからも活用していくと思います。</p><h1 id="Conference"><a href="#Conference" class="headerlink" title="Conference"></a>Conference</h1><h3 id="Try-Swift-Tokyo-WWDC-2017"><a href="#Try-Swift-Tokyo-WWDC-2017" class="headerlink" title="Try Swift Tokyo, WWDC 2017"></a>Try Swift Tokyo, WWDC 2017</h3><p>Try Swift TokyoとWWDC2017に参加することができた。<br>特に、WWDCの参加は今年が初めてだったので、とてもドキドキした。そして楽しめることができた。</p><p>ビアバッシュだけでなく、San Joseで開かれていたローカルのイベントにも参加した。元アップルの社員や、カンファレンスの登壇でしか知らなかった人にとりあえず、挨拶だけでもすることができた。</p><p>ただ、あまり勉強会的なものに、興味がなくなってきているので、ちょっとまずいかもしれない。</p>]]></content>
+    <updated>2018-03-19T12:28:06.000Z</updated>
     
     <summary type="html">
     
@@ -79,9 +71,7 @@
     <link href="https://yuchan.github.io/2017/12/15/pipenv/"/>
     <id>https://yuchan.github.io/2017/12/15/pipenv/</id>
     <published>2017-12-14T15:00:00.000Z</published>
-    <updated>2018-03-19T04:57:36.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>pythonの開発環境はずっと、pip, virtualenvを使ってやって来たけど、全部いちいち設定しないとめんどくさい。<br>という問題を解決したのが、pipenvらしい。</p><a id="more"></a><p>いや、素晴らしい。確かにめんどくさいけど、いつもやってて改善しようと思わないところにこういうソリューションを見つけると感動するな。</p><p>もっと問題解決に真剣に取り組むべきだなと思った。</p>]]></content>
+    <updated>2018-03-19T12:28:06.000Z</updated>
     
     <summary type="html">
     
@@ -97,15 +87,16 @@
     <link href="https://yuchan.github.io/2017/12/05/asdf-vm/"/>
     <id>https://yuchan.github.io/2017/12/05/asdf-vm/</id>
     <published>2017-12-04T15:00:00.000Z</published>
-    <updated>2018-03-19T04:57:36.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://github.com/asdf-vm/asdf" target="_blank" rel="noopener">https://github.com/asdf-vm/asdf</a><br><a href="https://qiita.com/ymtszw/items/28cc7a000236510b71c2" target="_blank" rel="noopener">https://qiita.com/ymtszw/items/28cc7a000236510b71c2</a></p><p>というか、意図したわけではないけしたわけではないけど、切り替わっていた。<br>同様のものにanyenvというのがあるけど、asdfの方がpluggableで優れている印象がある。</p><p><a href="https://github.com/riywo/anyenv" target="_blank" rel="noopener">https://github.com/riywo/anyenv</a></p>]]></content>
+    <updated>2018-03-19T12:28:06.000Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;a href=&quot;https://github.com/asdf-vm/asdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/asdf-vm/asdf&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://qiita.co
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://github.com/asdf-vm/asdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/asdf-vm/asdf&lt;/a&gt;&lt;br&gt;&lt;a
+        
       
     
     </summary>
@@ -118,16 +109,17 @@
     <link href="https://yuchan.github.io/2017/12/04/rewind-tmux/"/>
     <id>https://yuchan.github.io/2017/12/04/rewind-tmux/</id>
     <published>2017-12-03T15:00:00.000Z</published>
-    <updated>2018-03-19T04:57:36.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="OverView"><a href="#OverView" class="headerlink" title="OverView"></a>OverView</h2><ul><li><a href="https://medium.com/@peterxjang/a-minimalist-guide-to-tmux-13675fb160fa" target="_blank" rel="noopener">https://medium.com/@peterxjang/a-minimalist-guide-to-tmux-13675fb160fa</a></li></ul><p>最近は、だいたいtechネタはmediumからインスパイアされることが多い。<br>基本的なキーバインドとかは、調べるとだいたい出てくる。</p><h2 id="Scroll-Up-Down"><a href="#Scroll-Up-Down" class="headerlink" title="Scroll Up/Down"></a>Scroll Up/Down</h2><ul><li><a href="https://unix.stackexchange.com/questions/81540/how-can-i-page-up-or-down-in-tmux-with-terminal-app" target="_blank" rel="noopener">https://unix.stackexchange.com/questions/81540/how-can-i-page-up-or-down-in-tmux-with-terminal-app</a></li></ul><p>Next Stepで、まず、戸惑うのはスクロールできないってことじゃないかと思う。<br>だいたいはトラックパッドとかでスクロールすると思うので、いきなりよくわからん挙動になってビビる。</p><p>Macユーザーのデフォルトのキーは</p><p>Prefix Key -&gt; [ -&gt; fn+Page Up/Page Down</p><p>である。</p><p>TODO: 後でかっこいい絵文字挿入について調べる。</p><h2 id="Split-Pane"><a href="#Split-Pane" class="headerlink" title="Split Pane"></a>Split Pane</h2><p>terminalを縦割り、二画面で使いたい。<br>minimalist guideによれば、コマンド多すぎて、複雑すぎるので諦めろ、とある。笑<br>今現在、tab切り替えで満足しているならば、splitted paneは不要である。素直に新規tabを立ち上げよう(tmuxで)</p><p>それでも使いたい場合、</p><p>縦: prefix + %<br>横: prefix + ‘</p><p>でスクリーンを割ることができるので、どうぞ。</p><p>また、paneの切り替えは</p><p>prefix + o</p><p>である。</p><h2 id="現在のtmuxの設定"><a href="#現在のtmuxの設定" class="headerlink" title="現在のtmuxの設定"></a>現在のtmuxの設定</h2><p>tipsは三つほどあると、キリがいいと思うので、三つめに自分の設定を載せる</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">unbind C-b</span><br><span class="line">set-option -g prefix C-t</span><br><span class="line">bind-key C-t send-prefix</span><br><span class="line"></span><br><span class="line"># Start window numbering at 1</span><br><span class="line">set -g base-index 1</span><br><span class="line"></span><br><span class="line">set -g default-terminal &quot;xterm-256color&quot;</span><br></pre></td></tr></table></figure><p>ほぼminimalist guideからのコピペ、、ですが、数年前から基本的にはいじっていない。<br>prefixの変更しただけである。たまたまtが好み。</p><p>これでみんなもhackerになれるぞ！</p>]]></content>
+    <updated>2018-03-19T12:28:06.000Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;OverView&quot;&gt;&lt;a href=&quot;#OverView&quot; class=&quot;headerlink&quot; title=&quot;OverView&quot;&gt;&lt;/a&gt;OverView&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/@peterxjang/
+        
+        
+          &lt;h2 id=&quot;OverView&quot;&gt;&lt;a href=&quot;#OverView&quot; class=&quot;headerlink&quot; title=&quot;OverView&quot;&gt;&lt;/a&gt;OverView&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a
+        
       
     
     </summary>
@@ -140,9 +132,7 @@
     <link href="https://yuchan.github.io/2017/12/02/php-in-slack/"/>
     <id>https://yuchan.github.io/2017/12/02/php-in-slack/</id>
     <published>2017-12-01T15:00:00.000Z</published>
-    <updated>2018-03-19T04:57:36.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://builderscon.io/tokyo/2017/session/1689e7cb-775b-4f58-8d8d-52b2220267c6" target="_blank" rel="noopener">https://builderscon.io/tokyo/2017/session/1689e7cb-775b-4f58-8d8d-52b2220267c6</a></p><a id="more"></a><p>Speaking of PHP, Facebook, Mercari is popular users in Japan.<br>I am just wondering how they are thinking of PHP.</p><p>という中、PHPの現場という、まさにぴったりなPodcastがあって、よく聞いている。</p><p><a href="https://php-genba.shin1x1.com/" target="_blank" rel="noopener">https://php-genba.shin1x1.com/</a></p>]]></content>
+    <updated>2018-03-19T12:28:06.000Z</updated>
     
     <summary type="html">
     
@@ -158,15 +148,16 @@
     <link href="https://yuchan.github.io/2017/12/01/what-iOS-developers-should-know/"/>
     <id>https://yuchan.github.io/2017/12/01/what-iOS-developers-should-know/</id>
     <published>2017-11-30T15:00:00.000Z</published>
-    <updated>2018-03-19T04:57:36.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Why-you-should-super-learn-NodeJS"><a href="#Why-you-should-super-learn-NodeJS" class="headerlink" title="Why you should super learn NodeJS?"></a>Why you should super learn NodeJS?</h2><p>One of the biggest reason is areas that NodeJS covers.<br>NodeJS is useful for Web Development, server side development, and command line tools.</p>]]></content>
+    <updated>2018-03-19T12:28:06.000Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;Why-you-should-super-learn-NodeJS&quot;&gt;&lt;a href=&quot;#Why-you-should-super-learn-NodeJS&quot; class=&quot;headerlink&quot; title=&quot;Why you should super learn
+        
+        
+          &lt;h2 id=&quot;Why-you-should-super-learn-NodeJS&quot;&gt;&lt;a href=&quot;#Why-you-should-super-learn-NodeJS&quot; class=&quot;headerlink&quot; title=&quot;Why you should super
+        
       
     
     </summary>
